@@ -10,7 +10,10 @@
       "Bash(./launch-local.sh:*)",
       "Bash(open:*)",
       "Bash(ls:*)",
-      "Bash(zip:*)"
+      "Bash(zip:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(grep:*)"
     ]
   }
 }
