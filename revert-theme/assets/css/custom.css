@@ -33,36 +33,37 @@
 
 /* Dual Navigation Cards */
 .dual-navigation {
-  padding: var(--spacing-xl) 0;
-  background-color: rgba(255, 255, 255, 0.02);
+  padding: var(--spacing-xxl) 0;
+  background-color: #fafafa;
 }
 
 .nav-cards {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: var(--spacing-md);
+  gap: 2em;
 }
 
 .nav-card {
-  padding: var(--spacing-xl);
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: var(--spacing-xxl);
+  background: linear-gradient(135deg, #fff 0%, #f8fdf5 100%);
+  border: 1px solid #eee;
   border-radius: var(--border-radius);
   text-align: center;
   transition: var(--transition);
   color: var(--color-text);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .nav-card:hover {
-  background: linear-gradient(135deg, rgba(87, 94, 207, 0.1) 0%, rgba(87, 94, 207, 0.05) 100%);
-  border-color: var(--color-accent);
+  background: linear-gradient(135deg, #f8fdf5 0%, #e8f5e8 100%);
+  border-color: var(--color-primary-light);
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 12px 32px rgba(80, 161, 80, 0.15);
 }
 
 .nav-card h2 {
-  color: var(--color-text-light);
-  margin-bottom: var(--spacing-sm);
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-md);
 }
 
 /* Section Styles */
@@ -83,22 +84,23 @@
 .posts-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: var(--spacing-md);
+  gap: 2em;
 }
 
 .post-card {
-  background-color: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background-color: #fff;
+  border: 1px solid #eee;
   border-radius: var(--border-radius);
   overflow: hidden;
   transition: var(--transition);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .post-card:hover {
-  background-color: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.1);
+  background-color: #fafafa;
+  border-color: var(--color-primary-light);
   transform: translateY(-4px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 24px rgba(80, 161, 80, 0.15);
 }
 
 .post-card .post-image img {
@@ -139,8 +141,8 @@
 
 /* Newsletter Section */
 .newsletter-signup {
-  padding: var(--spacing-xl) 0;
-  background: linear-gradient(135deg, var(--color-bg-darker) 0%, rgba(87, 94, 207, 0.1) 100%);
+  padding: var(--spacing-xxl) 0;
+  background: linear-gradient(135deg, #f8fdf5 0%, #e8f5e8 100%);
   text-align: center;
 }
 
@@ -164,18 +166,18 @@
 }
 
 .success-message {
-  color: var(--color-success);
-  padding: var(--spacing-sm);
-  background-color: rgba(74, 222, 128, 0.1);
-  border: 1px solid var(--color-success);
+  color: #2d7a2d;
+  padding: var(--spacing-md);
+  background-color: #e8f5e8;
+  border: 1px solid var(--color-primary);
   border-radius: var(--border-radius);
 }
 
 .error-message {
-  color: var(--color-warning);
-  padding: var(--spacing-sm);
-  background-color: rgba(251, 191, 36, 0.1);
-  border: 1px solid var(--color-warning);
+  color: #a94442;
+  padding: var(--spacing-md);
+  background-color: #f2dede;
+  border: 1px solid #ebccd1;
   border-radius: var(--border-radius);
 }
 
@@ -203,22 +205,23 @@
 .resellers-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: var(--spacing-md);
+  gap: 2em;
 }
 
 .reseller-card {
-  background-color: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background-color: #fff;
+  border: 1px solid #eee;
   border-radius: var(--border-radius);
-  padding: var(--spacing-md);
+  padding: var(--spacing-lg);
   transition: var(--transition);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .reseller-card:hover {
-  background-color: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.1);
+  background-color: #fafafa;
+  border-color: var(--color-primary-light);
   transform: translateY(-4px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 24px rgba(80, 161, 80, 0.15);
 }
 
 .reseller-card h3 {
@@ -232,7 +235,7 @@
 .badge {
   display: inline-block;
   padding: 4px 12px;
-  background-color: var(--color-accent);
+  background-color: var(--color-primary);
   color: #fff;
   font-size: 0.75rem;
   font-weight: 600;
@@ -261,7 +264,7 @@
 }
 
 .contact-item .dashicons {
-  color: var(--color-accent);
+  color: var(--color-primary);
 }
 
 /* Filters */
@@ -269,10 +272,10 @@
 .reseller-filters {
   display: flex;
   gap: var(--spacing-md);
-  margin-bottom: var(--spacing-md);
-  padding: var(--spacing-md);
-  background-color: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  margin-bottom: var(--spacing-xl);
+  padding: var(--spacing-lg);
+  background-color: #f8f8f8;
+  border: 1px solid #eee;
   border-radius: var(--border-radius);
 }
 
@@ -286,7 +289,7 @@
 .filter-group label {
   font-size: 0.875rem;
   font-weight: 600;
-  color: var(--color-text-light);
+  color: var(--color-text);
 }
 
 /* Single Product Layout */
