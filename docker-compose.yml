@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: revert-mysql
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: revert_root_password
+      MYSQL_DATABASE: revert_wordpress
+      MYSQL_USER: revert_user
+      MYSQL_PASSWORD: revert_password
+    networks:
+      - revert-network
+
+  wordpress:
+    depends_on:
+      - db
+    image: wordpress:latest
+    container_name: revert-wordpress
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: revert_user
+      WORDPRESS_DB_PASSWORD: revert_password
+      WORDPRESS_DB_NAME: revert_wordpress
+      WORDPRESS_DEBUG: 1
+    volumes:
+      - wordpress_data:/var/www/html
+      - ./revert-theme:/var/www/html/wp-content/themes/revert-theme
+    networks:
+      - revert-network
+
+volumes:
+  db_data:
+  wordpress_data:
+
+networks:
+  revert-network:
+    driver: bridge

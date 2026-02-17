@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:flowfolio-design.lovable.app)",
+      "Bash(textutil -convert txt:*)",
+      "Bash(tree:*)",
+      "Bash(docker:*)",
+      "Bash(php:*)",
+      "Bash(chmod:*)",
+      "Bash(./launch-local.sh:*)",
+      "Bash(open:*)",
+      "Bash(ls:*)",
+      "Bash(zip:*)"
+    ]
+  }
+}
