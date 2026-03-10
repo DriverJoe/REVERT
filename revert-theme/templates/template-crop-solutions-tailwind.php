@@ -30,42 +30,51 @@ get_header();
 <!-- Solutions Grid -->
 <section class="py-16 md:py-20 bg-background">
     <div class="container">
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold mb-4">Our Solutions</h2>
+            <p class="text-xl text-muted-foreground max-w-2xl mx-auto">Integrated crop management for every stage of growth</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
 
             <!-- Crop Protection -->
-            <div class="bg-card rounded-lg border p-6 flex flex-col h-full hover:shadow-lg transition-all duration-300">
-                <?php echo revert_get_icon( 'shield', 'h-12 w-12 text-accent mb-4' ); ?>
-                <h3 class="text-xl font-semibold mb-2">Crop Protection</h3>
-                <p class="text-muted-foreground">Advanced protection against diseases, pests, and environmental stress</p>
+            <div class="bg-card rounded-lg border p-8 flex flex-col h-full hover:shadow-lg transition-all duration-300">
+                <?php echo revert_get_icon( 'shield', 'h-12 w-12 text-accent mb-6' ); ?>
+                <h3 class="text-xl font-semibold mb-3">Crop Protection</h3>
+                <p class="text-muted-foreground leading-relaxed">Advanced protection against diseases, pests, and environmental stress</p>
             </div>
 
             <!-- Nutrition Management -->
-            <div class="bg-card rounded-lg border p-6 flex flex-col h-full hover:shadow-lg transition-all duration-300">
-                <?php echo revert_get_icon( 'droplet', 'h-12 w-12 text-accent mb-4' ); ?>
-                <h3 class="text-xl font-semibold mb-2">Nutrition Management</h3>
-                <p class="text-muted-foreground">Optimized nutrient delivery systems for maximum yield and quality</p>
+            <div class="bg-card rounded-lg border p-8 flex flex-col h-full hover:shadow-lg transition-all duration-300">
+                <?php echo revert_get_icon( 'droplet', 'h-12 w-12 text-accent mb-6' ); ?>
+                <h3 class="text-xl font-semibold mb-3">Nutrition Management</h3>
+                <p class="text-muted-foreground leading-relaxed">Optimized nutrient delivery systems for maximum yield and quality</p>
             </div>
 
             <!-- Growth Enhancement -->
-            <div class="bg-card rounded-lg border p-6 flex flex-col h-full hover:shadow-lg transition-all duration-300">
-                <?php echo revert_get_icon( 'sprout', 'h-12 w-12 text-accent mb-4' ); ?>
-                <h3 class="text-xl font-semibold mb-2">Growth Enhancement</h3>
-                <p class="text-muted-foreground">Biological stimulants that promote healthy root and plant development</p>
+            <div class="bg-card rounded-lg border p-8 flex flex-col h-full hover:shadow-lg transition-all duration-300">
+                <?php echo revert_get_icon( 'sprout', 'h-12 w-12 text-accent mb-6' ); ?>
+                <h3 class="text-xl font-semibold mb-3">Growth Enhancement</h3>
+                <p class="text-muted-foreground leading-relaxed">Biological stimulants that promote healthy root and plant development</p>
             </div>
 
             <!-- Yield Optimization -->
-            <div class="bg-card rounded-lg border p-6 flex flex-col h-full hover:shadow-lg transition-all duration-300">
-                <?php echo revert_get_icon( 'trending-up', 'h-12 w-12 text-accent mb-4' ); ?>
-                <h3 class="text-xl font-semibold mb-2">Yield Optimization</h3>
-                <p class="text-muted-foreground">Proven solutions to maximize crop productivity sustainably</p>
+            <div class="bg-card rounded-lg border p-8 flex flex-col h-full hover:shadow-lg transition-all duration-300">
+                <?php echo revert_get_icon( 'trending-up', 'h-12 w-12 text-accent mb-6' ); ?>
+                <h3 class="text-xl font-semibold mb-3">Yield Optimization</h3>
+                <p class="text-muted-foreground leading-relaxed">Proven solutions to maximize crop productivity sustainably</p>
             </div>
 
         </div>
+    </div>
+</section>
 
-        <!-- Content Section -->
+<!-- Content Section -->
+<section class="py-16 md:py-20 bg-card">
+    <div class="container">
         <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold mb-6">Comprehensive Crop Care</h2>
-            <div class="space-y-4 text-lg text-muted-foreground">
+            <h2 class="text-3xl font-bold mb-8">Comprehensive Crop Care</h2>
+            <div class="space-y-6 text-lg text-muted-foreground leading-relaxed">
                 <p>
                     Our crop solutions are designed to meet the diverse needs of modern agriculture. From seed to harvest, we provide scientifically-proven products that enhance crop health, protect against threats, and optimize yields while maintaining environmental sustainability.
                 </p>
@@ -88,7 +97,7 @@ get_header();
             endwhile;
             ?>
 
-            <div class="mt-8 flex flex-wrap gap-4">
+            <div class="mt-12 flex flex-wrap gap-4">
                 <a href="<?php echo esc_url( home_url( '/contact' ) ); ?>" class="inline-flex h-11 items-center justify-center rounded-md px-8 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors font-medium">
                     Request Information
                 </a>
