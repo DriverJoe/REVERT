@@ -274,6 +274,23 @@ function revert_login_logo_url() {
 add_filter( 'login_headerurl', 'revert_login_logo_url' );
 
 /**
+ * Redirect old product URLs to correct pages
+ */
+function revert_redirects() {
+    if ( is_page( 'crop-solutions' ) ) {
+        return;
+    }
+
+    $request = isset( $_SERVER['REQUEST_URI'] ) ? $_SERVER['REQUEST_URI'] : '';
+
+    if ( preg_match( '#^/products/crop-solutions/?$#', $request ) ) {
+        wp_redirect( home_url( '/crop-solutions/' ), 301 );
+        exit;
+    }
+}
+add_action( 'template_redirect', 'revert_redirects' );
+
+/**
  * Security: Remove WordPress version
  */
 function revert_remove_version() {
