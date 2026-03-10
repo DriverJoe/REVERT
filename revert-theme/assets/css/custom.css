@@ -1,8 +1,27 @@
 /**
- * Additional Custom Styles
+ * Additional Custom Styles - ReVert Lovable Design
  *
  * @package ReVert
  */
+
+/* Crop Solutions Page */
+.crop-content-section {
+  max-width: 960px;
+  margin: 4rem auto 0;
+}
+
+.crop-content-section h2 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.crop-cta-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
 
 /* Additional component styles */
 
