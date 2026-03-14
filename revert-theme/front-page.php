@@ -6,38 +6,82 @@
  */
 
 get_header();
+
+// Hero fields
+$hero_image = has_post_thumbnail()
+    ? get_the_post_thumbnail_url( get_the_ID(), 'full' )
+    : get_template_directory_uri() . '/assets/images/hero-agriculture.jpg';
+
+// Solution cards
+$solutions = array(
+    array(
+        'title'       => 'Crop Solutions',
+        'description' => 'Advanced crop protection and nutrition',
+        'image'       => get_template_directory_uri() . '/assets/images/crop-solutions.jpg',
+        'link'        => home_url( '/crop-solutions' ),
+    ),
+    array(
+        'title'       => 'Horticulture',
+        'description' => 'Specialized horticultural solutions',
+        'image'       => get_template_directory_uri() . '/assets/images/horticulture.jpg',
+        'link'        => home_url( '/products/horticulture' ),
+    ),
+    array(
+        'title'       => 'Livestock',
+        'description' => 'Comprehensive livestock care',
+        'image'       => get_template_directory_uri() . '/assets/images/livestock.jpg',
+        'link'        => home_url( '/products/livestock' ),
+    ),
+    array(
+        'title'       => 'Research',
+        'description' => 'Innovation and case studies',
+        'image'       => get_template_directory_uri() . '/assets/images/research.jpg',
+        'link'        => home_url( '/research/innovation' ),
+    ),
+);
 ?>
 
 <!-- Hero Section -->
 <section class="hero">
+    <div class="hero-bg" style="background-image: url('<?php echo esc_url( $hero_image ); ?>');"></div>
+    <div class="hero-overlay"></div>
     <div class="container">
-        <h1 class="hero-title">ReVert</h1>
+        <h1 class="hero-title">Innovating Agriculture for a Sustainable Future</h1>
         <p class="hero-description">
-            Premium agricultural biologicals, stimulants, and nutrients for sustainable farming
+            Leading the way in sustainable agricultural solutions
         </p>
         <div class="hero-cta">
             <a href="<?php echo esc_url( home_url( '/products' ) ); ?>" class="btn btn-primary">
-                View Products
+                Explore Products
             </a>
-            <a href="<?php echo esc_url( home_url( '/resellers' ) ); ?>" class="btn btn-secondary">
-                Find a Reseller
+            <a href="<?php echo esc_url( home_url( '/about' ) ); ?>" class="btn btn-outline hero-btn-outline">
+                Learn More
             </a>
         </div>
     </div>
 </section>
 
-<!-- Dual Navigation -->
-<section class="dual-navigation">
+<!-- Our Solutions -->
+<section class="solutions-section">
     <div class="container">
-        <div class="nav-cards">
-            <a href="<?php echo esc_url( home_url( '/retail' ) ); ?>" class="nav-card">
-                <h2>Retail</h2>
-                <p>Solutions for home gardeners and small-scale growers</p>
-            </a>
-            <a href="<?php echo esc_url( home_url( '/commercial' ) ); ?>" class="nav-card">
-                <h2>Commercial</h2>
-                <p>Professional solutions for commercial agriculture</p>
-            </a>
+        <div class="section-header solutions-header">
+            <h2>Our Solutions</h2>
+            <p>Comprehensive agricultural solutions designed for every aspect of modern farming</p>
+        </div>
+        <div class="solutions-grid">
+            <?php foreach ( $solutions as $solution ) : ?>
+                <a href="<?php echo esc_url( $solution['link'] ); ?>" class="solution-card">
+                    <div class="solution-card-image">
+                        <img src="<?php echo esc_url( $solution['image'] ); ?>"
+                             alt="<?php echo esc_attr( $solution['title'] ); ?>"
+                             loading="lazy">
+                    </div>
+                    <div class="solution-card-content">
+                        <h3><?php echo esc_html( $solution['title'] ); ?></h3>
+                        <p><?php echo esc_html( $solution['description'] ); ?></p>
+                    </div>
+                </a>
+            <?php endforeach; ?>
         </div>
     </div>
 </section>

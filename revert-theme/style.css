@@ -323,12 +323,13 @@ input[type="submit"]:hover,
 /* Hero Section */
 .hero {
   position: relative;
-  height: 600px;
+  min-height: 85vh;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   text-align: center;
+  background-color: var(--color-primary);
 }
 
 .hero-bg {
@@ -341,28 +342,157 @@ input[type="submit"]:hover,
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, hsla(165, 18%, 29%, 0.9), hsla(165, 18%, 29%, 0.6));
+  background: linear-gradient(
+    to bottom,
+    hsla(165, 18%, 29%, 0.70),
+    hsla(165, 18%, 29%, 0.50),
+    hsla(165, 18%, 29%, 0.80)
+  );
 }
 
 .hero .container {
   position: relative;
   z-index: 10;
+  padding-top: 6rem;
+  padding-bottom: 4rem;
 }
 
 .hero-title {
-  font-size: 3rem;
-  margin-bottom: var(--spacing-md);
+  font-size: 3.5rem;
+  margin-bottom: var(--spacing-lg);
   color: var(--color-primary-fg);
   font-weight: 700;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.15;
 }
 
 .hero-description {
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   color: var(--color-primary-fg);
   max-width: 768px;
-  margin: 0 auto var(--spacing-xl);
+  margin: 0 auto var(--spacing-xxl);
   line-height: 1.8;
   opacity: 0.9;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-cta .btn-primary {
+  background-color: var(--color-secondary);
+  color: var(--color-foreground);
+  font-size: 1.05rem;
+  padding: 0.75rem 2.5rem;
+  height: auto;
+}
+
+.hero-cta .btn-primary:hover {
+  opacity: 0.85;
+}
+
+.hero-btn-outline {
+  background: transparent;
+  border: 1px solid hsla(120, 11%, 96%, 0.4);
+  color: var(--color-primary-fg);
+  font-size: 1.05rem;
+  padding: 0.75rem 2.5rem;
+  height: auto;
+}
+
+.hero-btn-outline:hover {
+  background-color: var(--color-primary-fg);
+  color: var(--color-primary);
+  border-color: var(--color-primary-fg);
+}
+
+/* Solutions Section */
+.solutions-section {
+  padding: var(--spacing-3xl) 0 var(--spacing-xxl);
+}
+
+.solutions-header {
+  text-align: center;
+  margin-bottom: var(--spacing-xxl);
+  display: block;
+}
+
+.solutions-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.solutions-header p {
+  font-size: 1.15rem;
+  color: var(--color-muted-fg);
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.solution-card {
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  text-decoration: none;
+  color: var(--color-foreground);
+  display: block;
+}
+
+.solution-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  color: var(--color-foreground);
+}
+
+.solution-card-image {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.solution-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.solution-card:hover .solution-card-image img {
+  transform: scale(1.05);
+}
+
+.solution-card-content {
+  padding: 1.25rem;
+  text-align: center;
+}
+
+.solution-card-content h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  transition: color 0.2s ease;
+}
+
+.solution-card:hover .solution-card-content h3 {
+  color: var(--color-accent);
+}
+
+.solution-card-content p {
+  font-size: 0.875rem;
+  color: var(--color-muted-fg);
+  margin: 0;
 }
 
 /* Page Hero (shorter, for inner pages) */
@@ -618,12 +748,21 @@ input[type="submit"]:hover,
   }
 
   .hero-title {
-    font-size: 2rem;
+    font-size: 2.25rem;
+  }
+
+  .hero .container {
+    padding-top: 4rem;
+    padding-bottom: 3rem;
   }
 
   h1 { font-size: 2rem; }
   h2 { font-size: 1.75rem; }
   h3 { font-size: 1.5rem; }
+
+  .solutions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
   .product-grid {
     grid-template-columns: 1fr;
@@ -631,6 +770,23 @@ input[type="submit"]:hover,
 
   .footer-widgets {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-title {
+    font-size: 4.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .solutions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+    align-items: center;
   }
 }
 
